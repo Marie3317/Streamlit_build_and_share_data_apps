@@ -47,8 +47,4 @@ st.line_chart(df_car[df_car['continent'] == filter])
 
 #Affichage d'un graph mpg avec la liste des pays.
 #Création d'un df avec juste mpg et pays
-df_mpg = df_car[["mpg", "continent"]]
-st.write("Voici une map de corrélation.")
-chart_data = df_mpg["mpg"]
-filter2 = st.selectbox('filter data', df_mpg['continent'].unique())
-st.area_chart(chart_data[df_mpg['continent'] == filter2]) 
+st.bar_chart(df_car["mpg"])

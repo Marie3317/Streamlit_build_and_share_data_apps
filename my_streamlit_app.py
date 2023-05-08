@@ -3,8 +3,7 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-import altair as alt
-from vega_datasets import data
+
 
 # Configuration de la page
 st.set_page_config(
@@ -45,21 +44,9 @@ st.line_chart(df_car[df_car['continent'] == filter])
 #Affichage d'un graph mpg avec la liste des pays
 
 
-chart = alt.Chart(df_car).mark_circle().encode(
-    x='mpg',
-    y='year',
-    color='continent',
-).interactive()
+chart_data2 = df_car["mpg"]
 
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
-
-with tab1:
-    # Use the Streamlit theme.
-    # This is the default. So you can also omit the theme argument.
-    st.altair_chart(chart, theme="streamlit", use_container_width=True)
-with tab2:
-    # Use the native Altair theme.
-    st.altair_chart(chart, theme=None, use_container_width=True)
+st.area_chart(chart_data2)
 
 
 #######

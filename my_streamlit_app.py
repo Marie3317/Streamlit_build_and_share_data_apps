@@ -48,7 +48,7 @@ st.line_chart(df_car[df_car['continent'] == filter])
 
 #Affichage d'un graph mpg avec la liste des pays.
 #Création d'un df avec juste mpg et pays
-filter2 = st.selectbox('filter data', df_car['continent'].unique()], [df_car["year"].unique()])
+filter2 = st.selectbox('filter data', [df_car['continent'].unique()], [df_car["year"].unique()])
 st.write('You selected:', filter2)
 st.bar_chart(df_car[df_car['contient'] == filter] | df_car[df_car['year'] == filter])
 

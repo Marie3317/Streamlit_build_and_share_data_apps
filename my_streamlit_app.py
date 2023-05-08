@@ -30,12 +30,13 @@ liste_pays = list(df_car["continent"].unique())
 
 #Affichage d'une map de corrélation
 st.write("Voici une map de corrélation.")
-viz_correlation = sns.heatmap(df_car.corr(), 
-								center=0,
-								cmap = sns.color_palette("vlag", as_cmap=True)
-								)
+viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True), size =(10,10)
 
 st.pyplot(viz_correlation.figure)
+######
+
+st.area_chart(df_car)
+
 
 #####
 

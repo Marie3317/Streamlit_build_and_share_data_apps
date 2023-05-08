@@ -37,8 +37,9 @@ st.pyplot(viz_correlation.figure)
 
 ######
 chart_data = (df["mpg"] == filter
-
-st.line_chart(df_car[df_car['continent'] == filter])
+st.line_chart(chart_data == filter])
+              
+              
 ######
 
 #Affichage d'un graph mpg avec la liste des pays

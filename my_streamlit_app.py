@@ -30,18 +30,16 @@ liste_pays = list(df_car["continent"].unique())
 st.write("Voici une map de corrélation.")
 viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
 st.pyplot(viz_correlation.figure)
+#####
 
 #Affichage d'un graph mpg avec la liste des pays
-st.write("Voici un graph represésentant le mpg.")
-
-with st.form("form 4"):
-    col1 = st.columns(1)
-    with col1 : 
-            st.line_chart(df_car['mpg'])
-            selection = st.selectbox("Pays : ", liste_pays)
-            submitted = st.form_submit_button("Submit")
+# Now this will show the filtered row in the dataframe as you change the inputs
+filter = st.selectbox('filter data', df_car['continent'].unique())
+st.write(df_car[df_car['continent'] == filter])
 
 
+
+#######
 #st.title('Hello Wilders, welcome to my application!')
 
 #name = st.text_input("Please give me your name :")

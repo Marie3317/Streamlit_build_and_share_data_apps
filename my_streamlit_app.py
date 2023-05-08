@@ -25,6 +25,8 @@ df_car = pd.read_csv(link)
 #Affichage du DF
 st.write(df_car)
 
+#####
+filter = st.selectbox('filter data', df_car['continent'].unique())
 #liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #####
 
@@ -34,16 +36,13 @@ viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette(
 st.pyplot(viz_correlation.figure)
 
 ######
-#Affichage d'un area_chart
-st.write("Voici un area_chart.")
-chart_data = df_car[["mpg", "cubicinches", "cylinders", "hp", "time-to-60", "weightlbs"]]
-st.area_chart(chart_data)
+chart_data = (df["mpg"] == filter
 
+st.line_chart(df_car[df_car['continent'] == filter])
 ######
 
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs
-filter = st.selectbox('filter data', df_car['continent'].unique())
 st.line_chart(df_car[df_car['continent'] == filter])
 
 

@@ -35,10 +35,11 @@ st.pyplot(viz_correlation.figure)
 st.write("Voici un graph represésentant le mpg.")
 
 with st.form("form 4"):
-        col1 = st.columns(1)
-        with col1 : 
+    col1 = st.columns(1)
+    with col1 : 
             st.line_chart(df_car['mpg'])
             selection = st.selectbox("Pays : ", liste_pays)
+            submitted = st.form_submit_button("Submit")
 
 
 #st.title('Hello Wilders, welcome to my application!')

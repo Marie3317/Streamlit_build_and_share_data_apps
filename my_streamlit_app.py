@@ -35,13 +35,16 @@ viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette(
 st.pyplot(viz_correlation.figure)
 
 ######
-chart_data = (df["mpg"] == filter
-filter = st.selectbox('filter data', df_car['mpg'].unique())
-st.line_chart(df_car[df_car['mpg'] == filter])
+
+
+#chart_data = (df["mpg"] == filter
+#filter = st.selectbox('filter data', df_car['mpg'].unique())
+#st.line_chart(df_car[df_car['mpg'] == filter])
               
               
 ######
 
+              
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs
 filter = st.selectbox('filter data', df_car['continent'].unique())
@@ -49,4 +52,3 @@ st.line_chart(df_car[df_car['continent'] == filter])
 
 
 #######
-

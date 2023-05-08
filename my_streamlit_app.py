@@ -41,12 +41,14 @@ st.write("On peut s'appercevoir que cylinders, cubicinches, hp et weightlbs sont
 
 #Affichage d'un graph
 st.write("Voici un graph global en fonction des continents.")
-filter2 = st.multiselect('filter data', [df_car['continent'].unique()], [df_car["year"].unique()])
-st.line_chart(df_car[df_car['continent'] == filter2])         
+filter = st.multiselect('filter data', [df_car['continent'])
+st.line_chart(df_car[df_car['continent'] == filter])         
 
 
 
 #Affichage d'un graph mpg avec la liste des pays.
 #Création d'un df avec juste mpg et pays
-filter = st.selectbox('filter data', df_car['continent'].unique())
-st.bar_chart(df_car["mpg"])
+filter2 = st.selectbox('filter data', df_car['continent'].unique()], [df_car["year"].unique()])
+st.write('You selected:', filter2)
+st.bar_chart(df_car[df_car['contient'] == filter] | df_car[df_car['year'] == filter])
+

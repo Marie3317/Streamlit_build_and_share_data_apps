@@ -29,7 +29,7 @@ st.write(df_car)
 
 #liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #mise en format date de la colonne year
-df_car["year"] = pd.to_datetimr(df_car["year"])
+df_car["year"] = pd.to_datetime(df_car["year"])
 
 #Affichage d'une map de corrélation
 st.write("Voici une map de corrélation.")

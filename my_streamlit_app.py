@@ -5,6 +5,8 @@ st.title('Hello Wilders, welcome to my application!')
 
 st.write("I enjoy to discover streamlit possibilities")
 
+st.write("Voici le DF avec lequel je vais travailler.")
+
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_car = pd.read_csv(link)
 st.write(df_car)

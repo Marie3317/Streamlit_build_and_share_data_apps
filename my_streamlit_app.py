@@ -37,7 +37,7 @@ st.pyplot(viz_correlation.figure)
 
 ######
 chart_data = (df["mpg"] == filter
-st.line_chart(chart_data == filter)
+st.line_chart([chart_data == filter])
               
               
 ######

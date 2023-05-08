@@ -26,7 +26,6 @@ df_car = pd.read_csv(link)
 st.write(df_car)
 
 #####
-filter = st.selectbox('filter data', df_car['continent'].unique())
 #liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #####
 
@@ -37,6 +36,7 @@ st.pyplot(viz_correlation.figure)
 
 ######
 chart_data = (df["mpg"] == filter
+filter = st.selectbox('filter data', df_car['continent'].unique())
 st.line_chart([chart_data == filter])
               
               
@@ -44,6 +44,7 @@ st.line_chart([chart_data == filter])
 
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs
+filter = st.selectbox('filter data', df_car['continent'].unique())
 st.line_chart(df_car[df_car['continent'] == filter])
 
 

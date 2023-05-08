@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import streamlit as st
+import matplotlib.pyplot as plt
 
 # Configuration de la page
 st.set_page_config(

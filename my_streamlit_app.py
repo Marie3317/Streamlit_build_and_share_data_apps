@@ -1,4 +1,5 @@
 import pandas as pd
+import seaborn as sns
 import streamlit as st
 
 # Configuration de la page
@@ -17,9 +18,9 @@ link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_car = pd.read_csv(link)
 st.write(df_car)
 
-#st.line_chart(df_car['MAX_TEMPERATURE_C'])
+st.line_chart(df_car['mpg'])
 
-#viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
+viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
 
 #st.pyplot(viz_correlation.figure)
 

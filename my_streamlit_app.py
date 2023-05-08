@@ -36,7 +36,8 @@ st.pyplot(viz_correlation.figure)
 
 ######
 
-
+#Affichage d'un graph
+st.write("Voici un graph global.")
 filter = st.selectbox('filter data', df_car['continent'].unique())
 st.line_chart(df_car[df_car['continent'] == filter])
               

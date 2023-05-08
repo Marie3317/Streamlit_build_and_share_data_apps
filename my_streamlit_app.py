@@ -31,7 +31,7 @@ liste_pays = list(df_car["continent"].unique())
 st.write("Voici une map de corrélation.")
 fig, ax = plt.subplots(figsize=(15,15))
 sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True), figsize = (15,15)
-st.write(fig)
+st.pyplot(fig)
 
 #####
 

@@ -1,6 +1,12 @@
 import pandas as pd
 import streamlit as st
 
+# Configuration de la page
+st.set_page_config(
+    page_title="Quête WildCodeSchool",
+    layout="wide",
+    page_icon="📐")
+
 st.title('Hello Wilders, welcome to my application!')
 
 st.write("I enjoy to discover streamlit possibilities")

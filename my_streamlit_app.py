@@ -24,7 +24,7 @@ df_car = pd.read_csv(link)
 st.write(df_car)
 
 #Création liste pour pays
-liste_pays = list(df_car["continent"])
+liste_pays = list(df_car["continent"].unique())
 st.line_chart(df_car['mpg'])
 selection = st.selectbox("Pays : ", liste_pays)
 

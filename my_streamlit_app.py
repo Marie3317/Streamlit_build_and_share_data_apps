@@ -25,6 +25,9 @@ st.write(df_car)
 
 #Création liste pour pays
 liste_pays = list(df_car["continent"].unique())
+
+#Affichage d'un graph mpg avec la liste des pays
+st.write("Voici un graph represésentant le mpg.")
 st.line_chart(df_car['mpg'])
 selection = st.selectbox("Pays : ", liste_pays)
 

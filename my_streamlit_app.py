@@ -33,6 +33,7 @@ st.write(df_car)
 st.write("Voici une map de corrélation.")
 viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
 st.pyplot(viz_correlation.figure)
+st.write("On peut s'appercevoir que  et sont fortment corrélés.")
 ######
 #Affichage d'un graph
 st.write("Voici un graph global en fonction des continents.")

@@ -36,8 +36,8 @@ st.pyplot(viz_correlation.figure)
 
 ######
 chart_data = (df["mpg"] == filter
-filter = st.selectbox('filter data', df_car['continent'].unique())
-st.line_chart([chart_data == filter])
+filter = st.selectbox('filter data', df_car['mpg'].unique())
+st.line_chart(df_car[df_car['mpg'] == filter])
               
               
 ######

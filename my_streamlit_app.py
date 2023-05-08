@@ -25,20 +25,20 @@ df_car = pd.read_csv(link)
 #Affichage du DF
 st.write(df_car)
 
-#Création liste pour pays
-liste_pays = list(df_car["continent"].unique())
+#liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
+#####
 
 #Affichage d'une map de corrélation
 st.write("Voici une map de corrélation.")
 viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
-
 st.pyplot(viz_correlation.figure)
+
 ######
+#Affichage d'un area_chart
+st.write("Voici un area_chart.")
+st.area_chart(df_car["mpg", "cubicinches", "cylinders", "hp", "time-to-60", "weightlbs")
 
-st.area_chart(df_car)
-
-
-#####
+######
 
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs

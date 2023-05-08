@@ -43,13 +43,8 @@ st.area_chart(df_car)
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs
 filter = st.selectbox('filter data', df_car['continent'].unique())
-st.write(df_car[df_car['continent'] == filter])
-
+st.line_chart(df_car[df_car['continent'] == filter])
 
 
 #######
-#st.title('Hello Wilders, welcome to my application!')
 
-#name = st.text_input("Please give me your name :")
-#name_length = len(name)
-#st.write("Your name has ",name_length,"characters")

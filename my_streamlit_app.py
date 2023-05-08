@@ -34,7 +34,7 @@ st.pyplot(viz_correlation.figure)
 #Affichage d'un graph mpg avec la liste des pays
 st.write("Voici un graph represésentant le mpg.")
 
-with st.form("form 1"):
+with st.form("form 4"):
         col1 = st.columns(1)
         with col1 : 
             st.line_chart(df_car['mpg'])

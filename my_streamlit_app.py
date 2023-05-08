@@ -37,7 +37,7 @@ st.pyplot(viz_correlation.figure)
 ######
 
 #Affichage d'un graph
-st.write("Voici un graph global.")
+st.write("Voici un graph global en fonction des continents.")
 filter = st.selectbox('filter data', df_car['continent'].unique())
 st.line_chart(df_car[df_car['continent'] == filter])
               
@@ -47,8 +47,8 @@ st.line_chart(df_car[df_car['continent'] == filter])
               
 #Affichage d'un graph mpg avec la liste des pays
 # Now this will show the filtered row in the dataframe as you change the inputs
-filter = st.selectbox('filter data', df_car['continent'].unique())
-st.line_chart(df_car[df_car['continent'] == filter])
+filter2 = st.selectbox('filter data', df_car['continent'].unique())
+st.bar_chart(df_car[df_car['continent'] == filter2])
 
 
 #######

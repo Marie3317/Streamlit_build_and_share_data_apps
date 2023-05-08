@@ -36,7 +36,8 @@ st.pyplot(viz_correlation.figure)
 ######
 #Affichage d'un area_chart
 st.write("Voici un area_chart.")
-st.area_chart(df_car["mpg", "cubicinches", "cylinders", "hp", "time-to-60", "weightlbs"])
+chart_data = df_car["mpg", "cubicinches", "cylinders", "hp", "time-to-60", "weightlbs"]
+st.area_chart(chart_data)
 
 ######
 

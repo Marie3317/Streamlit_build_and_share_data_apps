@@ -44,7 +44,7 @@ st.line_chart(df_car[df_car['continent'] == filter])
 # Now this will show the filtered row in the dataframe as you change the inputs
 filter2 = st.selectbox('filter data', df_car['continent'].unique())
 chart_data = df_car["mpg"]
-st.bar_chart(chart_data == filter2])
+st.bar_chart(chart_data == filter2)
 
 
 #######

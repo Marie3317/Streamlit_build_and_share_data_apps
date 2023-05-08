@@ -3,7 +3,7 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-
+import datetime
 
 # Configuration de la page
 st.set_page_config(
@@ -28,7 +28,8 @@ st.write(df_car)
 
 
 #liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
-
+#mise en format date de la colonne year
+df_car["year"] = pd.to_datetimr(df_car["year"])
 
 #Affichage d'une map de corrélation
 st.write("Voici une map de corrélation.")

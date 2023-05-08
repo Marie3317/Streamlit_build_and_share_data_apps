@@ -41,7 +41,7 @@ st.write("On peut s'appercevoir que cylinders, cubicinches, hp et weightlbs sont
 
 #Affichage d'un graph
 st.write("Voici un graph global en fonction des continents.")
-filter = st.multiselect('filter data', [df_car['continent'])
+filter = st.multiselect('filter data', [df_car['continent'].unique()])
 st.line_chart(df_car[df_car['continent'] == filter])         
 
 

@@ -32,6 +32,7 @@ df_car['continent'] = df_car['continent'].str.replace('.', '')
 def main():
 	st.sidebar.header("Les filtres des pays ici :")
 	pays = st.sidebar.multiselect("Sélectionne le ou les pays :", options = df_car["continent"].unique())
+	df_pays = df_car[df_car['continent'] == pays]
 
 
 # Affichage df

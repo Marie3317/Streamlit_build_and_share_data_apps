@@ -37,12 +37,11 @@ def main():
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
 	# afficher df
-	st.dataframe(df_car)
+	st.sidebar.dataframe(df_car)
 	
 	# Afficher une analyse de corrélation
     	#st.subheader('Analyse de corrélation')
-	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True), vmax = 1,
-				     vmin = 1)
+	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(viz_correlation.figure)	
 		
 	st.markdown("À partir de la carte thermique de corrélation, nous pouvons voir que la consommation des véhicules est fortement corrélée à leur puissance, leur masse et la taille de leur moteur. ")

@@ -44,9 +44,7 @@ st.pyplot(viz_correlation.figure)
 
 
 # Bar chart
-fig_chart_mpg = plt.hist(x = df_car["mpg"], 
-                title = "<b> Titre <b>",
-                template = "plotly_white", )
+fig_chart_mpg = plt.hist(x = df_car["mpg"])
 fig_chart_mpg.update_layout(plot_bgcolor = "rgba(0,0,0,0)")
 
 st.pyplot_chart(fig_chart_mpg)

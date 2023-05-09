@@ -44,15 +44,17 @@ st.pyplot(viz_correlation.figure)
 
 
 # Bar chart
-st.line_chart(df_car["mpg"])
+fig, ax = plt.subplots(1,1)
+ax.scatter(df_car["mpg"], df_car["year"])
+ax.set_xlabel("Mpg")
+ax.set_ylabel("Années")
+fig.subtitle("mpg/année")
+st.pyplot(fig)
 
-# Deux bar chart côte à côte
-#left_column, right_column = st.columns(2)
-#left_column.plotly_chart(fig_XX, use_container_width = True)
-#right_column.plotly_chart(fig_YY, use_container_width = True)
-
-# Pie chart
-#pie_chart = px.pie(df_car, title = "pier_chart",
-                   #values = "mpg",
-                   #names = "   ")
-#st.plotly_chart(pie_chart)
+# 
+fig2, ax = plt.subplots(1,1)
+ax.plot(df_car["mpg"], df_car["year"])
+ax.set_xlabel("Mpg")
+ax.set_ylabel("Années")
+fig2.subtitle("mpg/année")
+st.pyplot(fig2)

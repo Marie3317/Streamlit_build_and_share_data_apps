@@ -38,4 +38,5 @@ pays = st.sidebar.multiselect(
 
 df_selection= df_car.query("continent == @pays")
 
+st.dataframe(df_selection)
 

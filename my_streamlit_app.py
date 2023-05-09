@@ -31,27 +31,8 @@ st.write(df_car)
 df_car["year"] = pd.to_datetime(df_car["year"])
 
 #Sidebar
-st.sidebar.header("Les filtres des pays.")
+st.sidebar.header("Les filtres des pays ici :")
 contient = st.sidebar.multiselect(
-    "Séléctionne le pays.",
-    options = df_car["continent"].unique(),
-    defaut = df_car["continent"].unique())
-
-#Affichage d'une map de corrélation
-st.write("Voici une map de corrélation.")
-viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
-st.pyplot(viz_correlation.figure)
-st.write("On peut s'appercevoir que cylinders, cubicinches, hp et weightlbs sont fortment corrélés.")
-
-
-
-#Affichage d'un graph
-st.write("Voici un graph global en fonction des continents.")
-filter = st.selectbox('filter data', df_car['continent'].unique())
-st.line_chart(df_car[df_car['continent'] == filter])         
-
-
-
-#Affichage d'un graph mpg avec la liste des pays.
-
+    "Sélectionne le pays :",
+    options = df_car["continent"].unique())
 

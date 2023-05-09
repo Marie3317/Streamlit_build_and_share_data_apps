@@ -53,7 +53,7 @@ st.pyplot(fig)
 
 # 
 fig2, ax = plt.subplots(1,1)
-ax.plot(df_car["mpg"], df_car["year"])
+ax.plot(df_car["year"], df_car["cubicinches"])
 ax.set_xlabel("Mpg")
 ax.set_ylabel("Années")
 fig2.suptitle("mpg/année")

@@ -53,7 +53,7 @@ def main():
 	# Ajouter un regplot de la relation entre puissance moteur et consommation
 	st.write('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
-	sns.regplot(x="hp", y="time-to-60", data=df_selected_region, ax=ax)
+	sns.regplot(x="hp", y="time-to-60", data=df_select_pays, ax=ax)
 	st.pyplot(fig2)
 	
 	

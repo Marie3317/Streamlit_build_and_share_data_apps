@@ -33,10 +33,11 @@ pays = ["US", "Europe", "Japan"]
 def main():
 	st.sidebar.header("Les filtres des pays ici :")
 	pays_unique = df_car["continent"].unique()
-	pays_choisi = st.sidebar.multiselect(label = "Pays : ", options = pays_unique)
+	pays_choisi = st.sidebar.multiselect(selectbox('Sélectionner un pays', pays_unique)
+	df_select_pays = df[df['continent'] == pays_choisi]
 	
 	# afficher df
-	st.dataframe(df_selected_region)
+	st.dataframe(df_select_pays)
 	
 	# Afficher une analyse de corrélation
     	#st.subheader('Analyse de corrélation')

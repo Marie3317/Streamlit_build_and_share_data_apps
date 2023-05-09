@@ -37,28 +37,29 @@ def main():
 # Affichage df
 	st.dataframe(df_car)
 
+if __name__ == '__main__':
+	main()
+	
+	
 # Map corrélation
-viz_correlation = sns.heatmap(df_car.corr(), 
-								center=0,
-								cmap = sns.color_palette("vlag", as_cmap=True)
-								)
-st.pyplot(viz_correlation.figure)
+	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
+	st.pyplot(viz_correlation.figure)
 
 
 # Bar chart
-fig, ax = plt.subplots(1,1)
-ax.scatter(df_car["hp"], df_car["time-to-60"])
-ax.set_xlabel("Année")
-ax.set_ylabel("mpg")
-fig.suptitle("mpg/année")
-st.pyplot(fig)
+	fig, ax = plt.subplots(1,1)
+	ax.scatter(df_car["hp"], df_car["time-to-60"])
+	ax.set_xlabel("Année")
+	ax.set_ylabel("mpg")
+	fig.suptitle("mpg/année")
+	st.pyplot(fig)
 
 # 
-fig2, ax = plt.subplots(1,1)
-ax.plot(df_car["year"], df_car["cubicinches"])
-ax.set_xlabel("Année")
-ax.set_ylabel("cubicinches")
-fig2.suptitle("mpg/année")
-st.pyplot(fig2)
+	fig2, ax = plt.subplots(1,1)
+	ax.plot(df_car["year"], df_car["cubicinches"])
+	ax.set_xlabel("Année")
+	ax.set_ylabel("cubicinches")
+	fig2.suptitle("mpg/année")
+	st.pyplot(fig2)
 
 #

@@ -25,15 +25,63 @@ df_car = pd.read_csv(link)
 
 #Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #Mise en format date de la colonne year
-df_car["year"] = pd.to_datetime(df_car["year"])
+df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
 
 #Sidebar
 st.sidebar.header("Les filtres des pays ici :")
 pays = st.sidebar.multiselect(
-    "Sélectionne le pays :",
+    "Sélectionne le ou les pays :",
     options = df_car["continent"].unique())
 
 df_car= df_car.query("continent == @pays")
 
 st.dataframe(df_car)
+
+# Main page
+st.title(":bar_chart : df_car")
+st.markdown("##")
+
+#top kpi's
+total_mpg = int(df_car["mpg"]).sum())
+average_mpg = round(df_car["mpg"].mean(),2)
+
+left_colum, right_column = st.columns(2)
+with left_column :
+    st.subheader("Somme des mpg :")
+    st.subheader(f"Somme = {total_mpg}")
+ with right_column :
+    st.subheader("Moyenne des mpg :")
+    st.subheader(f"Moyenne = {average_mpg}")
+
+    st.markdown("---")
+
+# Map corrélation
+viz_correlation = sns.heatmap(df_weather.corr(), 
+								center=0,
+								cmap = sns.color_palette("vlag", as_cmap=True)
+								)
+viz_correlation.update_layout(figsize =(15,15))
+st.pyplot(viz_correlation.figure)
+
+# Bar chart
+fig_XX = px.bar(df_car, x = "mpg",
+                y = "year",
+                title = "<b> Titre <b>",
+                template = "plotly_white", )
+fig_XX.update_layout(plot_bgcolor = "rgba(0,0,0,0)")
+
+st.plotly_chart(fig_XX)
+
+# Deux bar chart côte à côte
+#left_column, right_column = st.columns(2)
+#left_column.plotly_chart(fig_XX, use_container_width = True)
+#right_column.plotly_chart(fig_YY, use_container_width = True)
+
+# Pie chart
+pie_chart = px.pie(df_car, title = "pier_chart",
+                   values = "mpg",
+                   names = "   ")
+st.plotly_chart(pie_chart)
+
+
 

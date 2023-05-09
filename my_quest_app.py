@@ -46,13 +46,12 @@ viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette(
 st.pyplot(viz_correlation.figure)
 
 # Bar chart
-fig_chart_mpg = px.bar(df_car, x = "mpg",
-                y = "year",
+fig_chart_mpg = plt.bar(df_car, x = "mpg",
                 title = "<b> Titre <b>",
                 template = "plotly_white", )
 fig_chart_mpg.update_layout(plot_bgcolor = "rgba(0,0,0,0)")
 
-st.plotly_chart(fig_chart_mpg)
+st.pyplot_chart(fig_chart_mpg)
 
 # Deux bar chart côte à côte
 #left_column, right_column = st.columns(2)

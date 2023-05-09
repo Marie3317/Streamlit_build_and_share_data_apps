@@ -27,6 +27,8 @@ df_car = pd.read_csv(link)
 st.write(df_car)
 
 #Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
+#Renommer nom des pays
+df_car.replace("US.", "USA")
 #mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"])
 

@@ -42,7 +42,7 @@ st.title(":bar_chart : df_car")
 st.markdown("##")
 
 #top kpi's
-total_mpg = int(df_car["mpg"]).sum())
+total_mpg = int(df_car["mpg"].sum())
 average_mpg = round(df_car["mpg"].mean(),2)
 
 left_colum, right_column = st.columns(2)

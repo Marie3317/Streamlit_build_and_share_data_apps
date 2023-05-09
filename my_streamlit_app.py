@@ -26,10 +26,16 @@ df_car = pd.read_csv(link)
 #Affichage du DF
 st.write(df_car)
 
-
-#liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
+#Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"])
+
+#Sidebar
+st.sidebar.header("Les filtres des pays.")
+contient = st.sidebar.multiselect(
+    "Séléctionne le pays.",
+    options = df_car["continent"].unique(),
+    defaut = df_car["continent"].unique())
 
 #Affichage d'une map de corrélation
 st.write("Voici une map de corrélation.")

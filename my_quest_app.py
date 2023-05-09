@@ -48,7 +48,7 @@ fig, ax = plt.subplots(1,1)
 ax.scatter(df_car["mpg"], df_car["year"])
 ax.set_xlabel("Mpg")
 ax.set_ylabel("Années")
-fig.subtitle("mpg/année")
+fig.suptitle("mpg/année")
 st.pyplot(fig)
 
 # 

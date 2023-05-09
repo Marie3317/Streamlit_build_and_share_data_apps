@@ -32,7 +32,7 @@ pays = ["US", "Europe", "Japan"]
 #Sidebar
 def main():
 	st.sidebar.header("Les filtres des pays ici :")
-	pays_unique = df["continent"].unique()
+	pays_unique = df_car["continent"].unique()
 	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	

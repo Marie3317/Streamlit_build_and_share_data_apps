@@ -37,7 +37,17 @@ def main():
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
 # afficher df
-	st.write(df_car)
+	st.dataframe(df_car)
+	
+# Afficher une analyse de corrélation
+    	st.subheader('Analyse de corrélation')
+	viz_correlation = sns.heatmap(df_weather.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True), vmax = 1,
+				     vmin = 1)
+	st.pyplot(viz_correlation.figure)	
+		
+	st.markdown("À partir de la carte thermique de corrélation, nous pouvons voir que la consommation des véhicules est fortement corrélée à leur puissance, leur masse et la taille de leur moteur. ")
+	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
+	st.write("Sans suprise, les véhicules plus lourds ont un moteur plus gros et une consommation supérieure aux plus légers.")
 
 if __name__ == '__main__':
 	main()

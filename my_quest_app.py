@@ -45,7 +45,7 @@ st.pyplot(viz_correlation.figure)
 
 # Bar chart
 fig_chart_mpg = plt.hist(x = df_car["mpg"])
-st.pyplot_chart(fig_chart_mpg)
+st.pyplot(fig_chart_mpg.figure)
 
 # Deux bar chart côte à côte
 #left_column, right_column = st.columns(2)

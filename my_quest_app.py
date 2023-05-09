@@ -27,7 +27,7 @@ df_car = pd.read_csv(link)
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
 df_car['continent'] = df_car['continent'].str.replace('.', '')
-df_pays = df_car["continent"].unique()
+df_pays = ["US", "Europe", "Japan"]
 
 #Sidebar
 def main():

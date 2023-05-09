@@ -57,7 +57,12 @@ def main():
 	sns.regplot(x="hp", y="time-to-60", data=df_select_pays, ax=ax)
 	st.pyplot(fig2)
 	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
+		
+	#bar chart
+	chart_data = df_car
+	st.bar_chart(chart_data)
 	
+	#commentaires
 	st.write("D'après l'histogramme de distribution, nous pouvons voir que :")
 	st.write("Sur 261 véhicules, 125 sont en 4 cylindres ( 47,89 % ) , 55 en 6 cylindres (21 % ) et 76 en 8 cylindres (29 %)")
 	st.write("Si la moyenne des tailles des moteurs est à 3291 cm³, c'est parce qu'il y a un fort déséquilibre entre les véhicules de la région US par rapport aux régions Japan et Europe.")

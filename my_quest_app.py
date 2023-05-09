@@ -37,7 +37,7 @@ def main():
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
 	# afficher df
-	st.dataframe(df_car)
+	st.dataframe(df_selected_region)
 	
 	# Afficher une analyse de corrélation
     	#st.subheader('Analyse de corrélation')
@@ -48,5 +48,14 @@ def main():
 	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
 	st.write("Sans suprise, les véhicules plus lourds ont un moteur plus gros et une consommation supérieure aux plus légers.")
 
+	
+	# Ajouter un regplot de la relation entre puissance moteur et consommation
+	st.subheader('Relation entre puissance moteur et consommation')
+	fig1, ax = plt.subplots()
+	sns.regplot(x="hp", y="time-to-60", data=df_selected_region, ax=ax)
+	st.pyplot(fig1)
+	
+	
+	
 if __name__ == '__main__':
 	main()

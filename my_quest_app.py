@@ -4,7 +4,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
-import plotly.express as px
 
 # Configuration de la page
 st.set_page_config(

@@ -27,16 +27,15 @@ df_car = pd.read_csv(link)
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
 df_car['continent'] = df_car['continent'].str.replace('.', '')
-df_pays = ["US", "Europe", "Japan"]
+pays = ["US", "Europe", "Japan"]
 
 #Sidebar
 def main():
 	st.sidebar.header("Les filtres des pays ici :")
-	pays = st.sidebar.multiselect("Sélectionne le ou les pays :", options = df_pays)
-	df_pays2 = df_car[df_car['continent'] == pays]
+	pays_unique = df["continent"].unique()
+	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
+	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
-
-
 
 if __name__ == '__main__':
 	main()

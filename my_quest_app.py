@@ -36,6 +36,8 @@ def main():
 	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
+# afficher df
+	st.write(df_car)
 
 if __name__ == '__main__':
 	main()

@@ -40,7 +40,7 @@ def main():
 	st.dataframe(df_car)
 	
 # Afficher une analyse de corrélation
-    	st.subheader('Analyse de corrélation')
+    	#st.subheader('Analyse de corrélation')
 	viz_correlation = sns.heatmap(df_weather.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True), vmax = 1,
 				     vmin = 1)
 	st.pyplot(viz_correlation.figure)	

@@ -26,14 +26,16 @@ df_car = pd.read_csv(link)
 #Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
+df['continent'] = df['continent'].str.replace('.', '')
 
 #Sidebar
-st.sidebar.header("Les filtres des pays ici :")
-pays = st.sidebar.multiselect(
-    "Sélectionne le ou les pays :",
-    options = df_car["continent"].unique())
+def main():
+	st.sidebar.header("Les filtres des pays ici :")
+	pays = st.sidebar.multiselect("Sélectionne le ou les pays :", options = df_car["continent"].unique())
 
-st.dataframe(df_car)
+
+# Affichage df
+	st.dataframe(df_car)
 
 # Map corrélation
 viz_correlation = sns.heatmap(df_car.corr(), 

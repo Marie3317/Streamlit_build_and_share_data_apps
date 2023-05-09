@@ -32,7 +32,10 @@ df_car["year"] = pd.to_datetime(df_car["year"])
 
 #Sidebar
 st.sidebar.header("Les filtres des pays ici :")
-contient = st.sidebar.multiselect(
+pays = st.sidebar.multiselect(
     "Sélectionne le pays :",
     options = df_car["continent"].unique())
+
+df_car = df.query("continent == @pays")
+
 

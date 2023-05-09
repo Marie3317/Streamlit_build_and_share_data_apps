@@ -26,7 +26,7 @@ df_car = pd.read_csv(link)
 #Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
-df['continent'] = df['continent'].str.replace('.', '')
+df_car['continent'] = df_car['continent'].str.replace('.', '')
 
 #Sidebar
 def main():

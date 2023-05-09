@@ -34,13 +34,14 @@ def main():
 	st.sidebar.header("Les filtres des pays ici :")
 	pays_unique = df_car["continent"].unique()
 	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
+	#st.multiselect('Sélectionner les pays', df_selected_region.columns)
 	df_select_pays = df_car[df_car['continent'] == pays_choisi]
 	
 	# afficher df
 	st.dataframe(df_select_pays)
 	
 	# Afficher une analyse de corrélation
-    	st.write('Map de corrélation')
+    	#st.subheader('Map de corrélation')
 	fig1, ax = plt.subplots()
 	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(fig1)	
@@ -51,12 +52,17 @@ def main():
 
 	
 	# Ajouter un regplot de la relation entre puissance moteur et consommation
-	st.write('Relation entre puissance moteur et consommation')
+	#st.subheader('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
 	sns.regplot(x="hp", y="time-to-60", data=df_select_pays, ax=ax)
 	st.pyplot(fig2)
+	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
 	
-	
+	st.write("D'après l'histogramme de distribution, nous pouvons voir que :")
+	st.write("Sur 261 véhicules, 125 sont en 4 cylindres ( 47,89 % ) , 55 en 6 cylindres (21 % ) et 76 en 8 cylindres (29 %)")
+	st.write("Si la moyenne des tailles des moteurs est à 3291 cm³, c'est parce qu'il y a un fort déséquilibre entre les véhicules de la région US par rapport aux régions Japan et Europe.")
+	st.write("Si les véhicules japonais sont souvent bien moins gourmands que la moyenne, les records de consommation se trouvent encore du côté de la région US")
+	st.write("Enfin, il serait très intéressant d'avoir un plus grand jeu de données sur des véhicules plus récents afin de vérifier si nos prédictions de baisse de consommation sont réalisées.")
 	
 if __name__ == '__main__':
 	main()

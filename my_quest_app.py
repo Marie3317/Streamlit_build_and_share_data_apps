@@ -41,8 +41,9 @@ def main():
 	
 	# Afficher une analyse de corrélation
     	st.subheader('Map de corrélation')
-	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
-	st.pyplot(viz_correlation.figure)	
+	fig1, ax = plt.subplots()
+	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
+	st.pyplot(fig1)	
 		
 	st.markdown("À partir de la carte thermique de corrélation, nous pouvons voir que la consommation des véhicules est fortement corrélée à leur puissance, leur masse et la taille de leur moteur. ")
 	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
@@ -51,9 +52,9 @@ def main():
 	
 	# Ajouter un regplot de la relation entre puissance moteur et consommation
 	st.subheader('Relation entre puissance moteur et consommation')
-	fig1, ax = plt.subplots()
+	fig2, ax = plt.subplots()
 	sns.regplot(x="hp", y="time-to-60", data=df_selected_region, ax=ax)
-	st.pyplot(fig1)
+	st.pyplot(fig2)
 	
 	
 	

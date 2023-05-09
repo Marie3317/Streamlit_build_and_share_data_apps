@@ -37,7 +37,7 @@ def main():
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
 	# afficher df
-	st.sidebar.dataframe(df_car)
+	st.dataframe(df_car)
 	
 	# Afficher une analyse de corrélation
     	#st.subheader('Analyse de corrélation')

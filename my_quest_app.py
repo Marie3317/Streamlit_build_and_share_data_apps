@@ -40,7 +40,7 @@ def main():
 	st.dataframe(df_select_pays)
 	
 	# Afficher une analyse de corrélation
-    	st.subheader('Map de corrélation')
+    	st.write('Map de corrélation')
 	fig1, ax = plt.subplots()
 	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(fig1)	
@@ -51,7 +51,7 @@ def main():
 
 	
 	# Ajouter un regplot de la relation entre puissance moteur et consommation
-	st.subheader('Relation entre puissance moteur et consommation')
+	st.write('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
 	sns.regplot(x="hp", y="time-to-60", data=df_selected_region, ax=ax)
 	st.pyplot(fig2)

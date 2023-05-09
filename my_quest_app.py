@@ -59,8 +59,12 @@ def main():
 	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
 		
 	#bar chart
+	fig3, ax = plt.subplots()
+	sns.histplot(df_car, x= "cylinders" , hue="year", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
+	ax.set_xticks([500, 1000, 2000, 5000, 10000])
 	chart_data = df_car
-	st.bar_chart(chart_data)
+	st.pyplot(fig3)
 	
 	#commentaires
 	st.write("D'après l'histogramme de distribution, nous pouvons voir que :")

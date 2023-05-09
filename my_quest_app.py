@@ -33,13 +33,7 @@ pays = st.sidebar.multiselect(
     "Sélectionne le ou les pays :",
     options = df_car["continent"].unique())
 
-df_car= df_car.query("continent == @pays")
-
 st.dataframe(df_car)
-
-# top mpg
-total_mpg = int(df_car["mpg"].sum())
-average_mpg = round(df_car["mpg"].mean(),2)
 
 # Map corrélation
 viz_correlation = sns.heatmap(df_car.corr(), 
@@ -50,7 +44,7 @@ st.pyplot(viz_correlation.figure)
 
 
 # Bar chart
-fig_chart_mpg = plt.bar(x = df_car["mpg"], bins = 200,
+fig_chart_mpg = plt.histplot(x = df_car["mpg"], 
                 title = "<b> Titre <b>",
                 template = "plotly_white", )
 fig_chart_mpg.update_layout(plot_bgcolor = "rgba(0,0,0,0)")

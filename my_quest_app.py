@@ -4,7 +4,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
-import plotly.express as px
 
 # Configuration de la page
 st.set_page_config(
@@ -61,5 +60,3 @@ fig2.suptitle("mpg/année")
 st.pyplot(fig2)
 
 #
-fig3 = px.bar(data = df_car, x = "weightlbs", y = "year")
-st.plotly_chart(fig3)

@@ -36,12 +36,12 @@ def main():
 	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
 	df_selected_region = df_car[df_car['continent'] == pays_choisi]
 	
-# afficher df
+	# afficher df
 	st.dataframe(df_car)
 	
-# Afficher une analyse de corrélation
+	# Afficher une analyse de corrélation
     	#st.subheader('Analyse de corrélation')
-	viz_correlation = sns.heatmap(df_weather.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True), vmax = 1,
+	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True), vmax = 1,
 				     vmin = 1)
 	st.pyplot(viz_correlation.figure)	
 		

@@ -42,7 +42,7 @@ total_mpg = int(df_car["mpg"].sum())
 average_mpg = round(df_car["mpg"].mean(),2)
 
 # Map corrélation
-viz_correlation = sns.heatmap(df_weather.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
+viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
 viz_correlation.update_layout(figsize =(15,15))
 st.pyplot(viz_correlation.figure)
 

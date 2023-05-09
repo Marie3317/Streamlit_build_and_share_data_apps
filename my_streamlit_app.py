@@ -23,9 +23,6 @@ st.write("Voici le DF avec lequel je vais travailler.")
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_car = pd.read_csv(link)
 
-#Affichage du DF
-st.write(df_car)
-
 #Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"])
@@ -36,7 +33,7 @@ pays = st.sidebar.multiselect(
     "Sélectionne le pays :",
     options = df_car["continent"].unique())
 
-df_selection= df_car.query("continent == @pays")
+df_car= df_car.query("continent == @pays")
 
-st.dataframe(df_selection)
+st.dataframe(df_car)
 

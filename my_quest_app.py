@@ -45,7 +45,7 @@ st.pyplot(viz_correlation.figure)
 
 # Bar chart
 fig, ax = plt.subplots(1,1)
-ax.scatter(df_car["year"], df_car["mpg"])
+ax.scatter(df_car["hp"], df_car["time-to-60"])
 ax.set_xlabel("Année")
 ax.set_ylabel("mpg")
 fig.suptitle("mpg/année")

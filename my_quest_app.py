@@ -42,11 +42,15 @@ total_mpg = int(df_car["mpg"].sum())
 average_mpg = round(df_car["mpg"].mean(),2)
 
 # Map corrélation
-viz_correlation = sns.heatmap(df_car.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
+viz_correlation = sns.heatmap(df_car.corr(), 
+								center=0,
+								cmap = sns.color_palette("vlag", as_cmap=True)
+								)
 st.pyplot(viz_correlation.figure)
 
+
 # Bar chart
-fig_chart_mpg = plt.bar(x = df_car["mpg"],
+fig_chart_mpg = plt.bar(x = df_car["mpg"], bins = 200,
                 title = "<b> Titre <b>",
                 template = "plotly_white", )
 fig_chart_mpg.update_layout(plot_bgcolor = "rgba(0,0,0,0)")

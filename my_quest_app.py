@@ -27,40 +27,16 @@ df_car = pd.read_csv(link)
 #Mise en format date de la colonne year
 df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
 df_car['continent'] = df_car['continent'].str.replace('.', '')
+df_pays = df_car["continent"].unique()
 
 #Sidebar
 def main():
 	st.sidebar.header("Les filtres des pays ici :")
-	pays = st.sidebar.multiselect("Sélectionne le ou les pays :", options = df_car["continent"].unique())
-	df_pays = df_car[df_car['continent'] == pays]
+	pays = st.sidebar.multiselect("Sélectionne le ou les pays :", options = df_pays)
+	df_pays2 = df_car[df_car['continent'] == pays]
+	
 
 
-# Affichage df
-	st.dataframe(df_car)
 
 if __name__ == '__main__':
 	main()
-	
-	
-# Map corrélation
-	viz_correlation = sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
-	st.pyplot(viz_correlation.figure)
-
-
-# Bar chart
-	fig, ax = plt.subplots(1,1)
-	ax.scatter(df_car["hp"], df_car["time-to-60"])
-	ax.set_xlabel("Année")
-	ax.set_ylabel("mpg")
-	fig.suptitle("mpg/année")
-	st.pyplot(fig)
-
-# 
-	fig2, ax = plt.subplots(1,1)
-	ax.plot(df_car["year"], df_car["cubicinches"])
-	ax.set_xlabel("Année")
-	ax.set_ylabel("cubicinches")
-	fig2.suptitle("mpg/année")
-	st.pyplot(fig2)
-
-#

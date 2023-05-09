@@ -44,10 +44,10 @@ average_mpg = round(df_car["mpg"].mean(),2)
 left_column, right_column = st.columns(2)
 with left_column :
     st.subheader("Somme des mpg :")
-    st.subheader(f"Somme = {total_mpg}")
+    st.subheader(f"Somme {total_mpg}")
 with right_column :
     st.subheader("Moyenne des mpg :")
-    st.subheader(f"Moyenne = {average_mpg}")
+    st.subheader(f"Moyenne {average_mpg}")
 
     st.markdown("---")
 

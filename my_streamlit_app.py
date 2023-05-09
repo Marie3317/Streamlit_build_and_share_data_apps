@@ -36,6 +36,6 @@ pays = st.sidebar.multiselect(
     "Sélectionne le pays :",
     options = df_car["continent"].unique())
 
-df_car = df.query("continent == @pays")
+df_selection= df_car.query("continent == @pays")
 
 

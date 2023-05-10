@@ -54,19 +54,21 @@ def main():
 	st.write("Les graphiques suivants vont explorer cette corrélation.")
 	
 	# Corrélation entre mpg et cubicinches
-	st.header('Relation entre puissance moteur et consommation')
+	st.header('Relation entre hp (horsepower) et cubicinches (taille des moteurs).')
 	fig2, ax = plt.subplots()
 	sns.regplot(x="cubicinches", y="hp", data=df_select_pays)
 	st.pyplot(fig2)
 	st.write("Il y a une forte corrélation entre le hp (horsepower) et le cubicinches (taille des moteurs). Les US possèdent une plus forte corrélation que le Japon ou bien l'Europe.")
 		
 	# Bar chart
+	st.header("Relation entre weightlbs (poids moteur) et cylinders (puissance).")
 	fig3, ax = plt.subplots()
 	sns.histplot(df_select_pays, x= "weightlbs" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig3)
 	st.write("On s'apperçoit que plus le weightlbs (poids moteur) est important plus les cylinders (puissance) augmentent.")
 	
 	# Corrélation entre weightlbs et hp
+	st.header("Relation entre hp (horse power) et cylinders (puissance).")
 	fig4, ax = plt.subplots()
 	sns.histplot(df_select_pays, x= "hp" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig4)
@@ -76,8 +78,8 @@ def main():
 	st.write("Un petit apperçu des corrélations entre ces quatres items nous a permis de voir leurs liens.")
 	st.write("A l'heure de la transition écologique, qu'en est-il de la consommation en mpg (miles per gallon ou xKM/100L) ?")	
 	
-	# Corrélation entre weightlbs et hp
-	st.header('Relation entre puissance moteur et consommation')
+	# Corrélation entre year et hp
+	st.header('Evolution de la consommation des voitures au fil des ans.')
 	fig5, ax = plt.subplots()
 	sns.scatterplot(x="year", y="mpg", hue ="hp", data=df_select_pays)
 	st.pyplot(fig5)

@@ -63,13 +63,13 @@ def main():
 		
 	# Bar chart
 	fig3, ax = plt.subplots()
-	sns.histplot(df_car, x= "weightlbs" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	sns.histplot(df_car, x= "weightlbs" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True, data=df_select_pays)
 	st.pyplot(fig3)
 	st.write("On s'apperçoit que plus le weightlbs (poids moteur) est important plus les cylinders (puissance) augmentent.")
 	
 	# Corrélation entre weightlbs et hp
 	fig4, ax = plt.subplots()
-	sns.histplot(df_car, x= "hp" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	sns.histplot(df_car, x= "hp" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True, data=df_select_pays)
 	st.pyplot(fig4)
 	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
 	
@@ -79,7 +79,8 @@ def main():
 	
 	# Corrélation entre weightlbs et hp
 	fig5, ax = plt.subplots()
-	sns.histplot(df_car, x= "year" , hue="mpg", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	plt.figure(figsize=(10, 4))
+	sns.countplot(x = "year", data = df_select_pays)
 	st.pyplot(fig5)
 	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
 	

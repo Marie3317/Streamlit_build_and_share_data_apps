@@ -83,5 +83,7 @@ def main():
 	st.pyplot(fig5)
 	st.write("On s'apperçoit que plus les années augmentent plus le mpg est élevé. La consommation d'une voiture diminue avec le temps.")
 	
+	st.write("Nous avons pu observer des corrélations et une piste d'évolution pour l'avenir.")
+	st.write("Il nous manque des années et quelques données supplémentaires afin de passer d'une analyse de corrélation à une analyse des causes et des pistes d'avenir.")
 if __name__ == '__main__':
 	main()

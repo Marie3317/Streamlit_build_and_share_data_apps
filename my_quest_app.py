@@ -78,11 +78,11 @@ def main():
 	st.write("A l'heure de la transition écologique, qu'en est-il de la consommation en mpg (miles per gallon ou xKM/100L) ?")	
 	
 	# Corrélation entre weightlbs et hp
+	st.header('Relation entre puissance moteur et consommation')
 	fig5, ax = plt.subplots()
 	plt.figure(figsize=(10, 4))
-	sns.scatterplot(df_select_pays, x="year", y="mpg")
+	sns.regplot(x="year", y="mpg", data=df_select_pays)
 	st.pyplot(fig5)
-	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
 	
 	#commentaires
 	st.write("D'après l'histogramme de distribution, nous pouvons voir que :")

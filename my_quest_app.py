@@ -36,8 +36,7 @@ pays = ["US", "Europe", "Japan"]
 def main():
 	st.sidebar.header("Les filtres des continents ici :")
 	pays_unique = df_car["continent"].unique()
-	#pays_choisi = st.sidebar.selectbox('Sélectionner un continent', pays_unique)
-	pays_choisi = st.multiselect('Sélectionner les continents', df_select_pays.columns)
+	pays_choisi = st.sidebar.selectbox('Sélectionner un continent', pays_unique)
 	df_select_pays = df_car[df_car['continent'] == pays_choisi]
 	
 	# Afficher df

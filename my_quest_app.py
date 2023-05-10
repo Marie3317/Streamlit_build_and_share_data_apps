@@ -80,7 +80,7 @@ def main():
 	# Corrélation entre weightlbs et hp
 	fig5, ax = plt.subplots()
 	plt.figure(figsize=(10, 4))
-	sns.countplot(x = "year", data = df_select_pays)
+	sns.histplot(x = "year", data = df_select_pays)
 	st.pyplot(fig5)
 	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
 	

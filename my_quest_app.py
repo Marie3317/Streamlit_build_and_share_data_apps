@@ -69,7 +69,7 @@ def main():
 	
 	# Corrélation entre weightlbs et hp
 	fig3, ax = plt.subplots()
-	sns.histplot(df_car, x= "weightlbs" , hue="hp", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	sns.histplot(df_car, x= "cylinders" , hue="hp", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig3)
 	st.write("On s'apperçoit que plus le weightlbs (poids moteur) est important plus les cylinders (puissance) augmentent.")
 	

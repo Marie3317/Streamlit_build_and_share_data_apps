@@ -61,17 +61,27 @@ def main():
 	st.pyplot(fig2)
 	st.write("Il y a une forte corrélation entre le hp (horsepower) et le cubicinches (taille des moteurs). Les US possèdent une plus forte corrélation que le Japon ou bien l'Europe.")
 		
-	#bar chart
+	# Bar chart
 	fig3, ax = plt.subplots()
 	sns.histplot(df_car, x= "weightlbs" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig3)
 	st.write("On s'apperçoit que plus le weightlbs (poids moteur) est important plus les cylinders (puissance) augmentent.")
 	
 	# Corrélation entre weightlbs et hp
-	fig3, ax = plt.subplots()
+	fig4, ax = plt.subplots()
 	sns.histplot(df_car, x= "hp" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
-	st.pyplot(fig3)
-	st.write("On s'apperçoit que plus le weightlbs (poids moteur) est important plus les cylinders (puissance) augmentent.")
+	st.pyplot(fig4)
+	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
+	
+	# Texte transition
+	st.write("Un petit apperçu des corrélations entre ces quatres items nous a permis de voir leurs liens.")
+	st.write("A l'heure de la transition écologique, qu'en est-il de la consommation en mpg (miles per gallon ou xKM/100L) ?")	
+	
+	# Corrélation entre weightlbs et hp
+	fig5, ax = plt.subplots()
+	sns.histplot(df_car, x= "year" , hue="mpg", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	st.pyplot(fig5)
+	st.write("On s'apperçoit que plus le hp (horse power) est important plus les cylinders (puissance) augmentent.")
 	
 	#commentaires
 	st.write("D'après l'histogramme de distribution, nous pouvons voir que :")

@@ -49,7 +49,7 @@ def main():
 	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(fig1)	
 	st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")
-	st.write("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.)
+	st.write("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.")
 	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
 	st.write("Sans suprise, les véhicules plus lourds ont un moteur plus gros et une consommation supérieure aux plus légers.")
 

@@ -40,24 +40,24 @@ def main():
 	#st.multiselect('Sélectionner les pays', df_selected_region.columns)
 	df_select_pays = df_car[df_car['continent'] == pays_choisi]
 	
-	# afficher df
+	# Afficher df
 	st.dataframe(df_select_pays)
 	
-	# Afficher une analyse de corrélation
+	# Afficher map de corrélation
 	st.header('Map de corrélation du dataframe complet.')
 	fig1, ax = plt.subplots()
 	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(fig1)	
 	st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")
 	st.write("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.")
-	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
-	st.write("Sans suprise, les véhicules plus lourds ont un moteur plus gros et une consommation supérieure aux plus légers.")
 
+	# Texte transition
+	st.write("Les graphiques suivants vont explorer cette corrélation.")
 	
-	# Ajouter un regplot de la relation entre puissance moteur et consommation
-	#st.subheader('Relation entre puissance moteur et consommation')
+	# Corrélation entre cylinders et cubicinches
+	st.header('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
-	sns.regplot(x="hp", y="time-to-60", data=df_select_pays, ax=ax)
+	sns.regplot(x="cylinders", y="cubicinches", data=df_select_pays, ax=ax)
 	st.pyplot(fig2)
 	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
 		

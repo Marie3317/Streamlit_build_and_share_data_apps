@@ -54,10 +54,10 @@ def main():
 	# Texte transition
 	st.write("Les graphiques suivants vont explorer cette corrélation.")
 	
-	# Corrélation entre cylinders et cubicinches
+	# Corrélation entre mpg et cubicinches
 	st.header('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
-	sns.regplot(x="mpg", y="cylinders", data=df_select_pays, ax=ax)
+	sns.regplot(x="cubicinches", y="mpg", data=df_select_pays, ax=ax)
 	st.pyplot(fig2)
 	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
 		

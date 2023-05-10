@@ -24,7 +24,7 @@ link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_car = pd.read_csv(link)
 
 #Liste des noms des colonnes : continent(pays), cubicinches(measure of the swept volume of all of the pistons in the bores),
-#cylinders(cylindres), hp, mpg(miles per gallon), time-to-60(0 à 100km/h), weightlbs(masse), year(années)
+#cylinders(cylindres), hp(horsepower), mpg(miles per gallon), time-to-60(0 à 100km/h), weightlbs(masse), year(années)
 #Mise en format date de la colonne year
 #df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
 # Mise en format de la colonne contient
@@ -57,13 +57,13 @@ def main():
 	# Corrélation entre mpg et cubicinches
 	st.header('Relation entre puissance moteur et consommation')
 	fig2, ax = plt.subplots()
-	sns.regplot(x="cubicinches", y="mpg", data=df_select_pays, ax=ax)
+	sns.regplot(x="cubicinches", y="hp", data=df_select_pays)
 	st.pyplot(fig2)
 	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
 		
 	#bar chart
 	fig3, ax = plt.subplots()
-	sns.histplot(df_car, x= "cylinders" , hue="year", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	sns.histplot(df_car, x= "year" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig3)
 	
 	#commentaires

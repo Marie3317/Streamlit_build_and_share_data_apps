@@ -34,9 +34,9 @@ pays = ["US", "Europe", "Japan"]
 
 #Sidebar
 def main():
-	st.sidebar.header("Les filtres des pays ici :")
+	st.sidebar.header("Les filtres des continents ici :")
 	pays_unique = df_car["continent"].unique()
-	pays_choisi = st.sidebar.selectbox('Sélectionner un pays', pays_unique)
+	pays_choisi = st.sidebar.selectbox('Sélectionner un continent', pays_unique)
 	#st.multiselect('Sélectionner les pays', df_selected_region.columns)
 	df_select_pays = df_car[df_car['continent'] == pays_choisi]
 	
@@ -59,11 +59,11 @@ def main():
 	fig2, ax = plt.subplots()
 	sns.regplot(x="cubicinches", y="hp", data=df_select_pays)
 	st.pyplot(fig2)
-	st.write("Nous ne serons pas étonnés de vérifier la forte corrélation entre la puissance et la taille du moteur et sa consommation en carburant.")
+	st.write("Il y a une forte corrélation entre le hp (horsepower) et la taille des moteurs. Les US possèdent une plus forte corrélation que le Japon ou bien l'Europe.")
 		
 	#bar chart
 	fig3, ax = plt.subplots()
-	sns.histplot(df_car, x= "year" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
+	sns.histplot(df_car, x= "weightlbs" , hue="cylinders", multiple="stack", palette="light:m_r", edgecolor=".3", linewidth=.5, log_scale=True,)
 	st.pyplot(fig3)
 	
 	#commentaires

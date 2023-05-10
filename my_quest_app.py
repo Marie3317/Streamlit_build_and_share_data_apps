@@ -81,7 +81,7 @@ def main():
 	st.header('Relation entre puissance moteur et consommation')
 	fig5, ax = plt.subplots()
 	plt.figure(figsize=(10, 4))
-	sns.regplot(x="year", y="mpg", data=df_car)
+	sns.regplot(x="year", y="mpg", hue ="hp", data=df_car)
 	st.pyplot(fig5)
 	
 	#commentaires

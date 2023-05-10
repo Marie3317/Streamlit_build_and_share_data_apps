@@ -23,10 +23,13 @@ st.write("Voici le DF avec lequel je vais travailler.")
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_car = pd.read_csv(link)
 
-#Liste des noms des colonnes : continent, cubicinches, cylinders, hp, mpg, time-to-60, weightlbs, year
+#Liste des noms des colonnes : continent(pays), cubicinches(measure of the swept volume of all of the pistons in the bores),
+#cylinders(cylindres), hp, mpg(miles per gallon), time-to-60(0 à 100km/h), weightlbs(masse), year(années)
 #Mise en format date de la colonne year
-df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
+#df_car["year"] = pd.to_datetime(df_car["year"]).dt.year
+# Mise en format de la colonne contient
 df_car['continent'] = df_car['continent'].str.replace('.', '')
+# Création liste pays
 pays = ["US", "Europe", "Japan"]
 
 #Sidebar
@@ -41,12 +44,12 @@ def main():
 	st.dataframe(df_select_pays)
 	
 	# Afficher une analyse de corrélation
-    	#st.subheader('Map de corrélation')
+    	st.markdown('Map de corrélation du dataframe complet.')
 	fig1, ax = plt.subplots()
 	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	st.pyplot(fig1)	
-		
-	st.markdown("À partir de la carte thermique de corrélation, nous pouvons voir que la consommation des véhicules est fortement corrélée à leur puissance, leur masse et la taille de leur moteur. ")
+	st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")
+	st.markdown("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.)
 	st.write("On constate une corrélation négative entre la consommation et l'année, ce qui signifie que les constructeurs ont tendance à faire des véhicules moins gourmands au fil des améliorations techniques.")
 	st.write("Sans suprise, les véhicules plus lourds ont un moteur plus gros et une consommation supérieure aux plus légers.")
 

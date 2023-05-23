@@ -40,7 +40,7 @@ def main():
 	st.dataframe(df_select_pays)
 	
 	# Afficher map de corrélation
-	#st.header('Map de corrélation du dataframe complet.')
+	st.header('Map de corrélation du dataframe complet.')
 	#fig1, ax = plt.subplots()
 	#sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	#st.pyplot(fig1)	

@@ -41,7 +41,7 @@ def main():
 	
 	# Afficher map de corrélation
 	st.header('Map de corrélation du dataframe complet.')
-	#fig1, ax = plt.subplots()
+	fig1, ax = plt.subplots()
 	#sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
 	#st.pyplot(fig1)	
 	#st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")

@@ -1,5 +1,2 @@
 plotly.express
-spotipy
-scikit-learn
-numpy
 seaborn

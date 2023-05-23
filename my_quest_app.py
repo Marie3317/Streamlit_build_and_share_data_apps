@@ -42,10 +42,10 @@ def main():
 	# Afficher map de corrélation
 	st.header('Map de corrélation du dataframe complet.')
 	fig1, ax = plt.subplots()
-	sns.heatmap(df_car.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
-	#st.pyplot(fig1)	
-	#st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")
-	#st.write("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.")
+	sns.heatmap(df_select_pays.corr(), center=0,cmap = sns.color_palette("vlag", as_cmap=True))
+	st.pyplot(fig1)	
+	st.markdown("On constate que 4 items sont fortement corrélés positivement entre eux. Ce sont les cylinders, les cubicinches, les hp et enfin les weightlbs.")
+	st.write("Cela signifie que la puissance des voitures, la taille des moteurs, la consommation des voitures et leur masse sont corrélés. Cela est plutôt logique.")
 
 	# Texte transition
 	st.write("Les graphiques suivants vont explorer cette corrélation.")

@@ -2,3 +2,4 @@ numpy==1.22.0
 seaborn==1.22.0
 pandas==1.22.0
 streamlit==1.22.0
+scikit-learn 1.2.2
